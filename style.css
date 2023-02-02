@@ -1,0 +1,98 @@
+:root {
+    --fnt-clr: #151E4B;
+    --fnt-light: #FFF;
+    --fnt-head: 2em;
+    --fnt-logo: 1.25em;
+    --fnt-txt: 1em;
+    --fnt-fam: "Georgia", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    max-width: 100%;
+    padding: 4em 5em 0 7.5em;
+}
+
+h1, h2, p {
+    font-family: var(--fnt-fam);
+    color: var(--fnt-clr);
+}
+
+h1 {
+    font-size: var(--fnt-head);
+    display: inline;
+}
+
+h2 {
+    font-size: var(--fnt-logo);
+}
+
+p {
+    font-size: var(--fnt-txt);
+}
+
+.left__grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-image__container {
+    width: 100%;
+    object-position: cover;
+}
+
+.header-image__container img {
+    width: 100%;
+}
+
+.content__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.content {
+    max-width: 24ch;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--fnt-clr);
+    margin: 5em 5em 0 2em;
+    border-radius: 1em;
+    height: 60%;
+}
+
+.aside__content {
+    margin-block-start: 2em;
+    padding-inline-start: 1em;
+}
+
+.aside__txt {
+    color: var(--fnt-light);
+    max-width: 15ch;
+}
+
+.aside__txt:nth-child(2) {
+    margin-block-end: 4em;
+}
+
+.btn {
+    border: black 1px solid;
+    color: var(--fnt-clr);
+    background-color: var(--fnt-light);
+    padding: .5em 1.5em;
+    text-decoration: none;
+    border-radius: .375em;
+}
