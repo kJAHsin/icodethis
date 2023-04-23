@@ -1,98 +1,153 @@
 :root {
-    --fnt-clr: #151E4B;
-    --fnt-light: #FFF;
-    --fnt-head: 2em;
-    --fnt-logo: 1.25em;
-    --fnt-txt: 1em;
-    --fnt-fam: "Georgia", sans-serif;
+	--fnt-clr: #10152e;
+	--fnt-head: 2em;
+	--fnt-logo: 1.25em;
+	--fnt-txt: 1em;
+	--fnt-fam: "Poppins", sans-serif;
+
+	--color-shadow: #d7b4dd;
+	--color-plusbg: #f2eef3;
+	--color-plus: #e76996;
+	--color-cardbor: #dad0d0;
+	--color-light: #fff;
+    --color-bg: #5a1e64;
+    --color-shapes: #b6325d;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	display: flex;
+	justify-content: center;
+    background-color: var(--color-bg);
 }
 
 body {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    max-width: 100%;
-    padding: 4em 5em 0 7.5em;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	font-family: var(--fnt-fam);
+	max-width: 1200px;
+    background-color: var(--color-light);
+    margin-block: 5em 7em;
+    height: 110%;
+    border-radius: .375em;
 }
 
-h1, h2, p {
-    font-family: var(--fnt-fam);
-    color: var(--fnt-clr);
+@media only screen and (max-width: 686px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	header {
+		display: flex;
+		justify-content: center;
+		margin-inline-start: 0;
+	}
+	h1 {
+		display: block;
+		text-align: center;
+		max-width: 20ch;
+	}
+}
+
+body::before, body::after {
+    content: "";
+    height: 10em;
+    width: 10em;
+    position: absolute;
+    z-index: -1;
+}
+
+body::before {
+    background-color: var(--color-shapes);
+    left: 5em;
+    top: 1em;
+}
+
+body::after {
+    border-right: var(--color-shapes) 1em solid;
+    border-bottom: var(--color-shapes) 1em solid;
+    right: 2.5em;
+    bottom: -15em;
+}
+
+.cards__container {
+	margin: 3em;
+}
+
+.card__container {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	position: relative;
+	border: var(--color-cardbor) 1px solid;
+	background-color: var(--color-light);
+	padding-inline: 1.5em;
+	transition: 0.25s ease-in-out;
+	border-radius: 0.25em;
+}
+
+.card__container:hover,
+.card__container:focus-within {
+	scale: 0.975;
+	z-index: 5;
+	box-shadow: 0 1.25em 1em -1em var(--color-shadow);
+}
+
+header {
+	margin: 3em 0 0 3em;
 }
 
 h1 {
-    font-size: var(--fnt-head);
+	font-size: var(--fnt-head);
+}
+
+.card-info__toggle {
+    display: none;
+}
+
+.card__info {
+    display: none;
+}
+
+.card-info__toggle:checked ~ .card__info {
     display: inline;
 }
 
-h2 {
-    font-size: var(--fnt-logo);
+.card__toggle {
+    display: block;
+    position: relative;
+	width: 2em;
+	height: 2em;
+	top: 1em;
+	background-color: var(--color-plusbg);
+	border-radius: 50%;
 }
 
-p {
-    font-size: var(--fnt-txt);
+.card__toggle::before,
+.card__toggle::after {
+    content: "";
+	height: 3px;
+	width: 1.125em;
+	position: absolute;
+	background-color: var(--color-plus);
+	left: 0.5em;
+	top: 0.875em;
+    transition: .25s;
 }
 
-.left__grid {
-    display: flex;
-    flex-direction: column;
+.card__toggle::after {
+    transform: rotate(90deg);
 }
 
-.header-image__container {
-    width: 100%;
-    object-position: cover;
-}
-
-.header-image__container img {
-    width: 100%;
-}
-
-.content__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-}
-
-.content {
-    max-width: 24ch;
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--fnt-clr);
-    margin: 5em 5em 0 2em;
-    border-radius: 1em;
-    height: 60%;
-}
-
-.aside__content {
-    margin-block-start: 2em;
-    padding-inline-start: 1em;
-}
-
-.aside__txt {
-    color: var(--fnt-light);
-    max-width: 15ch;
-}
-
-.aside__txt:nth-child(2) {
-    margin-block-end: 4em;
-}
-
-.btn {
-    border: black 1px solid;
-    color: var(--fnt-clr);
-    background-color: var(--fnt-light);
-    padding: .5em 1.5em;
-    text-decoration: none;
-    border-radius: .375em;
+.card-info__toggle1:checked + label > .card__toggle::after {
+    transform: rotate(90deg);
 }
