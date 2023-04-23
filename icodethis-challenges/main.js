@@ -25,4 +25,4 @@ closeSubmit.addEventListener("click", () => {
 
 
 // gsap
-gsap.from(".container", {duration: 4, x: 1200, y: -650, backgroundColor: "rgb(100, 100, 100)", ease: "elastic", rotate: "120deg"});
+gsap.from(".container", {duration: 4, x: 880, y: -450, backgroundColor: "rgb(130, 99, 236)", ease: "elastic", rotate: "120deg"});
