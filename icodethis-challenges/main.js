@@ -22,3 +22,7 @@ const closeSubmit = document.getElementById("closeSubmit");
 closeSubmit.addEventListener("click", () => {
     sumbitPage.classList.toggle("open");
 })
+
+
+// gsap
+gsap.from(".container", {duration: 4, x: 1200, y: -650, backgroundColor: "rgb(100, 100, 100)", ease: "elastic", rotate: "120deg"});
