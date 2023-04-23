@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+    <title>Create account</title>
+</head>
+
+<body class="flex">
+    <div class="container flex">
+        <aside>
+            <ul class="cards flex column">
+                <li class="card flex column">
+                    <svg class="check" width="20" height="20" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7L9 15L23 1" stroke="currentColor" />
+                    </svg>
+                    <h2>Quick and free sign-up</h2>
+                    <p>Enter your email address to create an account.</p>
+                </li>
+                <li class="card flex column">
+                    <svg class="check" width="20" height="20" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7L9 15L23 1" stroke="currentColor" />
+                    </svg>
+                    <h2>Cross-platform solution</h2>
+                    <p>Preview your newsletter on any device before sending them out.</p>
+                </li>
+                <li class="card flex column">
+                    <svg class="check" width="20" height="20" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7L9 15L23 1" stroke="currentColor" />
+                    </svg>
+                    <h2>Start sending eemails</h2>
+                    <p>Use our API or pick our pre-built templates.</p>
+                </li>
+            </ul>
+        </aside>
+        <div class="main flex column">
+             <h1>Create your account</h1>
+             <form action="post" class="flex column">
+                 <label for="emailInput">Email</label>
+                 <input type="email" name="email" id="emailInput">
+                 <label for="nameInput">Full name</label>
+                 <input type="email" name="name" id="nameInput">
+                 <label for="passInput">Password</label>
+                 <input type="password" name="password" id="passInput">
+             </form>
+             <input type="checkbox" name="updates" id="updateToggle">
+             <label for="updateToggle" id="checkToggle"><span id="checkSpan" class="checked--fill"><svg id="checkSVG" class="checked--opac" width="14" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7L9 15L23 1" stroke="white"/>
+            </svg></span>Get updates and notifications about our products.</label>
+            <button>Type to create a password</button>
+        </div>
+        <div id="submitPage">
+            <h3>YOU FOOL!</h3>
+            <h4>Your password is now mine!</h4>
+            <svg id="closeSubmit" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L11 12M1 12L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+:root {
+    --clr-bg: rgb(245,243,252);
+    --clr-grad: linear-gradient(135deg, rgba(184,144,232,1) 0%, rgba(125,62,199,1) 100%);
+    --clr-neutral: rgb(195,165,235);
+    --clr-primary: rgb(110, 89, 206);
+    --border-rad: 4px;
+    --padding: 5em;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: "Poppins", sans-serif;
+    font-size: .75rem;
+    background-color: var(--clr-bg);
+}
+
+.container {
+    margin: auto;
+    padding: calc(var(--padding) / 2);
+    box-shadow: 0 5px 17px -8px var(--clr-primary);
+    border-radius: var(--border-rad);
+    position: relative;
+    overflow: hidden;
+}
+
+aside {
+    background: var(--clr-grad);
+    color: white;
+    padding: var(--padding);
+    border-radius: var(--border-rad) 0 0 var(--border-rad);
+}
+
+.cards {
+    gap: 3em;
+}
+
+.card {
+    gap: .5em;
+}
+
+.check {
+    background-color: var(--clr-neutral);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.card > h2 {
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.card > p  {
+    max-width: 25ch;
+}
+
+.main {
+    padding: var(--padding);
+    gap: 1em;
+    isolation: isolate;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+form > label {
+    margin-top: 2em;
+    font-weight: 500;
+}
+
+form > input {
+    line-height: 2.5;
+    border: rgb(210,210,210) 1px solid;
+    border-radius: var(--border-rad);
+    transition: border 350ms ease-in-out;
+    padding-inline: 1em;
+}
+
+form > input:focus {
+    border-color: var(--clr-primary);
+    outline: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    font-size: .875em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-block: 1em;
+}
+
+input[type="checkbox"] + label > span {
+    background-color: white;
+    height: 2em;
+    width: 2em;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-rad);
+    border: rgb(210,210,210) 1px solid;;
+    transition: color 300ms ease-out;
+}
+
+input[type="checkbox"] + label > span.checked--fill {
+    background-color: var(--clr-primary);
+    transition: color 300ms ease-in;
+}
+
+input[type="checkbox"] + label > span > svg {
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
+
+input[type="checkbox"] + label > span > svg.checked--opac {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+button {
+    border: var(--clr-primary) 1px solid;
+    background-color: var(--clr-primary);
+    padding: 1em;
+    font-family: inherit;
+    font-size: .875em;
+    color: white;
+    border-radius: var(--border-rad);
+    position: relative;
+    transition: transform 250ms ease-out;
+    transform: translateY(0);
+}
+
+button::after {
+    content: "";
+    background: var(--clr-primary);
+    top: 3px;
+    bottom: -3px;
+    left: 3px;
+    right: 3px;
+    position: absolute;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+button:hover, button:focus-visible {
+    opacity: .9;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column-reverse;
+        gap: 1em;
+        margin-block: 1em;
+    }
+    aside {
+        border-radius: var(--border-rad);
+    }
+    .main {
+        padding: 1em;
+    }
+}
+
+#submitPage {
+    position: absolute;
+    inset: 0;
+    background: url(https://media.tenor.com/zAL59Q3m-gUAAAAC/flaming-elmo-flaming-elmo-meme.gif);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transform-origin: bottom;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 400ms ease-in, opacity 550ms ease-out;
+    text-align: center;
+}
+
+#submitPage.open {
+    transform: translateY(0);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 1.25em auto 0;
+    font-size: calc(5vw + 1em);
+}
+h4 {
+    margin: 0 auto;
+    font-size: calc(3vw + 2px);
+}
+
+#closeSumbit:hover {
+    border: white 1px solid;
+}
