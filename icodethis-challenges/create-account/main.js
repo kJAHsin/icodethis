@@ -25,4 +25,6 @@ closeSubmit.addEventListener("click", () => {
 
 
 // gsap
-gsap.from(".container", {duration: 4, x: 880, y: -450, backgroundColor: "rgb(130, 99, 236)", ease: "elastic", rotate: "120deg"});
+const container = document.querySelector(".container");
+
+gsap.from(container, {duration: 4, x: 880, y: -450, backgroundColor: "rgb(130, 99, 236)", ease: "elastic", rotate: "120deg"});

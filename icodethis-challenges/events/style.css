@@ -1,0 +1,99 @@
+:root {
+    --color-primary: rgb(84,75,171);
+    --color-neutral: rgb(234,236,249);
+    --color-btn: rgb(55,51,93);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    font-family: sans-serif;
+    background: var(--color-neutral);
+}
+
+h1 {
+    font-size: .675em;
+    font-weight: 500;
+    margin-block-end: .5em;
+}
+
+h3 {
+    font-size: .875em;
+    font-weight: 500;
+    margin-block: 1em 1.5em;
+}
+
+p {
+    font-size: .75em;
+}
+
+div#root {
+    width: clamp(15em, 95%, 50em);
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    background-color: white;
+    padding: 4em;
+    border-radius: 1em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: .75em;
+}
+
+.card {
+    padding: 1.5em;
+    position: relative;
+}
+
+.card:nth-child(2n + 1) {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.card:nth-child(2n) {
+    background-color: var(--color-neutral);
+    color: black;
+}
+
+#arrowRight {
+    position: absolute;
+    right: 1.5em;
+    bottom: 1.5em;
+}
+
+#loadButton {
+    background-color: var(--color-btn);
+    border: none;
+    padding-block: 3em;
+    margin-block-start: 1em;
+    color: white;
+    transition: background 350ms ease-out;
+}
+
+#loadButton:hover, #loadButton:focus-visible {
+    background-color: var(--color-primary);
+}
+
+
+
+
+@media only screen and (max-width: 660px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
