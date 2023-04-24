@@ -128,7 +128,8 @@ function createButton() {
             })
             loadButton.innerText = "LOAD MORE EVENTS";
         }
-
+        let newCards = document.querySelectorAll(".show--card");
+        gsap.from(newCards, { stagger: .25, duration: 1, x: -20, opacity: 0, y: 50});
     })
 }
 
