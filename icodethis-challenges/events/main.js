@@ -49,6 +49,32 @@ const objArr = [
         "startTime": 13,
         "endTime": 14,
         "location": "Online"
+    },
+    {
+        "month": "MAY",
+        "startDate": 11,
+        "heading": "Microsoft Patch Management For Home Users",
+        "startTime": 9,
+        "endTime": 11,
+        "location": "Online"
+    },
+    {
+        "month": "MAY",
+        "startDate": 14,
+        "endDate": 16,
+        "heading": "Help Finding Information Online",
+        "startTime": 11,
+        "endTime": 13,
+        "location": "Online"
+    },
+    {
+        "month": "MAY",
+        "startDate": 18,
+        "endDate": 20,
+        "heading": "Steps In Installing Rack Mount Lcd Monitors",
+        "startTime": 13,
+        "endTime": 14,
+        "location": "Online"
     }
 ]
 
@@ -87,10 +113,24 @@ function createButton() {
     loadButton.id = "loadButton";
     loadButton.innerText = "LOAD MORE EVENTS";
     root.appendChild(loadButton);
+    // button click to show more
+    loadButton.addEventListener("click", () => {
+        let hiddenCards = document.querySelectorAll(".card:nth-child(n + 7)");
+        if (loadButton.innerText.includes("LOAD")) {
+            hiddenCards.forEach(card => {
+                card.classList.add("show--card");
+            })
+            loadButton.innerText = "HIDE EXTRA EVENTS";
+        }
+        else {
+            hiddenCards.forEach(card => {
+                card.classList.remove("show--card");
+            })
+            loadButton.innerText = "LOAD MORE EVENTS";
+        }
+
+    })
 }
-
-
-
 
 // loadFunction
 function loadPage() {
@@ -99,3 +139,5 @@ function loadPage() {
 }
 
 loadPage();
+
+
