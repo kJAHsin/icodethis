@@ -1,0 +1,66 @@
+:root {
+    --color-bg: rgb(27,29,54);
+    --color-primary: rgb(35,37,70);
+    --color-secondary: rgb(47,49,92);
+    --color-focus: rgb(234,76,137);
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    color: white;
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg);
+}
+
+.container {
+    margin: auto;
+    padding: 2.5em;
+    background-color: var(--color-primary);
+    border-radius: .5em;
+}
+
+h1 {
+    font-size: .75em;
+    font-weight: 400;
+}
+
+small {
+    font-size: .5em;
+}
+
+p {
+    font-size: .75em;
+    display: flex;
+    gap: 6em;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: 1em;
+    margin-top: 4px;
+}
+
+p > span:nth-child(2) {
+    font-size: .675em;
+    color: rgb(71,75,148);
+    cursor: pointer;
+}
+
+.icon__wrapper {
+    display: flex;
+    gap: 1em;
+    margin-block: 1em 1.5em;
+}
+
+.ti {
+    font-size: 1.5em;
+    font-weight: 100;
+    background-color: var(--color-secondary);
+    padding: .375em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 350ms ease-in;
+}
+
+.ti:hover, .ti:focus-visible {
+    background-color: var(--color-focus);
+}
